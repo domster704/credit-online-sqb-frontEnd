@@ -1,0 +1,87 @@
+*, *:after, *:before {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    outline: 0;
+    vertical-align: baseline;
+    background: transparent;
+}
+
+:root {
+    font-family: 'Inter', sans-serif;
+}
+
+@supports (font-variation-settings: normal) {
+    :root {
+        font-family: 'Inter var', sans-serif;
+    }
+}
+
+html {
+    min-height: 100vh;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(to right, #FFFFFF, #DCF0FB, #D7F1FF);
+    margin: 0.5rem 5%;
+
+    display: flex;
+    flex-direction: column;
+
+    color: #4E5B7C;
+}
+
+.flex_row {
+    display: flex;
+    flex-direction: row;
+    /*align-items: center;*/
+}
+
+.button {
+    color: #FFFFFF;
+    background: linear-gradient(to right, #F47915, #FEA14B);
+    max-width: max-content;
+    min-width: max-content;
+
+    padding: clamp(5px, 1vw, 16px) clamp(40px, 4vw, 70px);
+    border-radius: clamp(6px, 0.45vw, 8px);
+    font-weight: bold;
+    margin: 2vw auto 0;
+    user-select: none;
+}
+
+.vertical_line {
+    grid-area: L;
+    border-left: 1px solid #E2F2F9;
+    height: 100%;
+    margin: 0 1rem;
+}
+
+.horizontal_line {
+    height: 2px;
+    width: 20vw;
+    background-color: #95CFF3;
+    align-self: center;
+}
+
+.button:hover {
+    cursor: pointer;
+}
+
+.font_size_14 {
+    font-size: clamp(10px, 2.75vw, 16px);
+}
+
+.font_size_12 {
+    font-size: clamp(9px, 0.75vw, 14px)
+}
+
+.font_size_26 {
+    font-size: clamp(16px, 2vw, 26px);
+}
+
+.font_size_32 {
+    font-size: clamp(13px, 3vw, 32px);
+}

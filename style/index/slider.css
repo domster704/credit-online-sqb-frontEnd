@@ -1,0 +1,79 @@
+.slider_container {
+    margin: 1rem auto;
+}
+
+.slider {
+    -webkit-appearance: none;
+    appearance: none;
+
+    width: 100%;
+    height: clamp(16px, 3vw, 27px);
+    outline: none;
+    cursor: pointer;
+
+    border-radius: 2.5rem;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+
+    width: clamp(18px, 3.5vw, 32px);
+    aspect-ratio: 1 / 1;
+
+    border-radius: 50%;
+    background-color: var(--thumb-color);
+
+    background-size: clamp(10px, 2vw, 16px);
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+#mySlider1::-webkit-slider-thumb {
+    background-image: url('../../res/image/sum.svg');
+}
+
+#mySlider2::-webkit-slider-thumb {
+    background-image: url('../../res/image/calendar.svg');
+}
+
+.slider_sum_button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: clamp(10px, 100vw, 18px);
+    height: clamp(10px, 100vw, 18px);
+    border-radius: 50%;
+    border: 2px var(--slider-button-color) solid;
+    color: var(--slider-button-color);
+    user-select: none;
+}
+
+.slider_sum_button:hover {
+    cursor: pointer;
+}
+
+.slider_sum_text {
+    margin: 0 1rem;
+    width: clamp(80px, 10vw, 300px);
+    display: flex;
+    justify-content: center;
+}
+
+.slider_prefix {
+    min-width: clamp(65px, 5vw, 150px);
+}
+
+.slider_end {
+    justify-self: flex-end;
+}
+
+.slider_start {
+    justify-self: flex-start;
+}
+
+.sum {
+    justify-self: center;
+}
+

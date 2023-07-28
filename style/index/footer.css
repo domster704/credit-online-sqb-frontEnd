@@ -1,0 +1,115 @@
+.footer {
+    background: #FDFFFF;
+    border: solid #E2F2F9 1px;
+    border-radius: 8px;
+
+    margin-top: 6rem;
+    margin-bottom: 1.5rem;
+    filter: drop-shadow(0 4px 20px rgba(66, 167, 225, 0.25));
+
+    padding: 2% 3%;
+
+    display: grid;
+    grid-template-areas:
+    "H H S N"
+    "P C S I";
+}
+
+.phone_block {
+    grid-area: P;
+}
+
+.clock_block {
+    grid-area: C;
+}
+
+/*.call_block {*/
+/*    font-size: 0.875rem;*/
+/*    margin-right: 10rem;*/
+/*}*/
+
+.call_block > div > img {
+    margin-right: 0.5rem
+}
+
+#call_info {
+    max-width: 7.5rem;
+    color: #A4ABBB;
+    margin-left: 2rem;
+    margin-top: 0.25rem;
+    padding-right: 1rem;
+}
+
+.social_network_block {
+    margin-right: auto;
+    grid-area: I;
+    align-items: center;
+}
+
+.svg_block {
+    width: 2rem;
+    height: 2rem;
+    background-color: #DAF0FC;
+    border: 1px #A0DEFF solid;
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.svg_block:not(:first-child) {
+    margin-left: clamp(15px, 4vw, 150px);
+}
+
+.footer > .vertical_line {
+    grid-area: S;
+}
+
+.we_are_in_network {
+    width: 100%;
+    grid-area: N;
+    margin-top: 0.5rem;
+    min-width: max-content;
+}
+
+.support {
+    grid-area: H;
+    margin-bottom: 1rem;
+    margin-top: 0.5rem;
+}
+
+.flex_row_for_date {
+    display: flex;
+    flex-direction: row;
+    margin-left: 1rem;
+}
+
+.phone_number {
+    margin-left: 1rem;
+    margin-right: clamp(30px, 10vw, 500px);
+    min-width: max-content;
+}
+
+@media (max-width: 1256px) {
+    .flex_row_for_date {
+        display: block;
+    }
+
+    #backslash {
+        display: none;
+    }
+}
+
+@media (max-width: 1100px) {
+    .footer {
+        grid-template-areas:
+        "H N"
+        "P I"
+        "C I";
+    }
+
+    .clock_block {
+        margin-top: 1rem;
+    }
+}

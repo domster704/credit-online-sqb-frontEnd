@@ -1,0 +1,146 @@
+.main {
+    filter: drop-shadow(0 4px 20px rgba(66, 167, 225, 0.3));
+}
+
+.main_top {
+    align-items: center;
+    justify-content: space-between;
+}
+
+.invite_image_after {
+    display: none;
+}
+
+.panel_before {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.panel_before > .tab > .tab_element {
+    align-items: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+    border-radius: 8px 8px 0 0;
+    font-size: clamp(12px, 1vw, 14px);
+}
+
+.panel_before > .tab > .tab_element:hover {
+    cursor: pointer;
+}
+
+.panel_before > .tab > .tab_element > .gray_text_in_tab {
+    color: #979FB1;
+}
+
+.tab_element_active {
+    background-color: #FDFFFF;
+}
+
+.tab_element_not_active {
+    background-color: #E2F2F9;
+}
+
+.credit_gift_block {
+    background-color: #9EDCFF;
+    color: #FFFFFF;
+    margin-left: auto;
+    transform: translateY(0.6rem);
+    padding: 0.4rem;
+    font-size: 0.75rem;
+
+    border-radius: 8px 8px 0 0;
+}
+
+.panel_block {
+    background-color: #FDFFFF;
+    display: grid;
+    grid-template-areas: "S S L R";
+    align-items: center;
+    justify-content: space-between;
+    padding: 1% 3%;
+
+    border-radius: 0 0 8px 8px;
+    width: clamp(300px, 100%, 15000px);
+}
+
+.sliders_list {
+    padding: 10% 0;
+    grid-area: S;
+}
+
+.results {
+    padding: 10% 0;
+    grid-area: R;
+}
+
+.results * {
+    min-width: max-content;
+}
+
+.results > div:not(:first-child) {
+    margin-top: 1.75rem;
+}
+
+.flex_row > div > del {
+    margin-left: 1rem;
+    margin-right: 0.5rem;
+    color: #A4ABBB;
+}
+
+.credit_by_card {
+    color: #4E5B7C;
+    font-size: clamp(25px, 3.75vw, 64px);
+    font-weight: 700;
+    margin-bottom: 1rem;
+
+    margin-left: auto;
+}
+
+.credit_info {
+    color: #4E5B7C;
+    font-weight: 500;
+    margin-left: auto;
+    font-size: clamp(12px, 2vw, 32px);
+}
+
+@media (max-width: 1199px) {
+    .main_top {
+        display: block;
+        margin: 0 auto 3rem;
+    }
+
+    .invite_image {
+        display: none;
+    }
+
+    .invite_image_after {
+        display: block;
+        margin: 0 auto;
+        max-width: 100%;
+    }
+
+    /*.panel_before > .tab > .tab_element {*/
+    /*    padding: 1rem 8rem;*/
+    /*}*/
+}
+
+@media (max-width: 980px) {
+    .panel_block > .vertical_line {
+        display: none;
+    }
+
+    .credit_gift_block {
+        display: none;
+    }
+
+    .panel_block {
+        display: block;
+    }
+
+    .panel_before > .tab > .tab_element {
+        min-width: fit-content;
+    }
+}

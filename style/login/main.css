@@ -1,0 +1,96 @@
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main_top {
+    text-align: center;
+    margin-bottom: clamp(30px, 3vw, 50px);
+}
+
+.circle_main {
+    display: grid;
+}
+
+.circle_block {
+    align-items: center;
+    justify-content: center;
+    margin: 1vw 0;
+
+    color: #A4ABBB;
+}
+
+.circle_block_text {
+    align-items: center;
+    justify-content: center;
+    margin: 1vw 0;
+
+    color: #A4ABBB;
+}
+
+.step {
+    align-text: center;
+    width: 70%;
+    margin: 0 auto;
+    display: none;
+}
+
+.step.active {
+    display: block;
+}
+
+.step_block {
+    background-color: #FDFFFF;
+    padding: 3%;
+    border-radius: 8px;
+    width: clamp(300px, 55%, 15000px);
+}
+
+.step_phone_number {
+    margin-top: 1vw;
+}
+
+.step_phone_number > input {
+    width: 100%;
+    background: transparent;
+    border-bottom: 1px #A4ABBB solid;
+    padding-bottom: 0.5vw;
+}
+
+.step_phone_number > input::-webkit-input-placeholder {
+    color: #A4ABBB;
+    font-size: clamp(9px, 0.75vw, 14px);
+}
+
+.circle_step {
+    width: clamp(32px, 2.5vw, 46px);
+    aspect-ratio: 1 / 1;
+    background-color: #B8E0F7;
+    border-radius: 50%;
+    margin: 0.5rem clamp(10px, 1vw, 20px);
+}
+
+.circle_step_block.active > .circle_step {
+    width: clamp(32px, 20vw, 100px);
+    aspect-ratio: 1 / 1;
+
+    padding: 0.3rem;
+    border: 1px solid transparent;
+    box-shadow: 0 0 0 3px #FF7F11;
+    background: #FDFFFF url("../../res/image/reg.svg") no-repeat center center;
+    background-size: 1.75rem;
+    background-clip: content-box;
+}
+
+.circle_step_block.active > .circle_step_text {
+    color: transparent;
+}
+
+.input_label {
+    margin-top: 1.5rem;
+}
+
+.horizontal_line {
+    transform: translateY(-0.35rem);
+}

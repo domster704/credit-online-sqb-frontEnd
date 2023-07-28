@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <link href="https://rsms.me/" rel="preconnect">
+    <link href="https://rsms.me/inter/inter.css" rel="stylesheet">
+
+    <link href="style/common.css" rel="stylesheet"/>
+    <link href="style/index/header.css" rel="stylesheet"/>
+    <link href="style/index/footer.css" rel="stylesheet"/>
+    <link href="style/login/main.css" rel="stylesheet"/>
+</head>
+<body style="justify-content: space-between">
+<header class="header">
+    <img alt="" src="res/image/logo.png">
+
+    <div class="header_element_number_block"><a href="">0 800 120 8888</a></div>
+</header>
+
+<main>
+    <div class="main_top">
+        <div class="circle_main">
+            <div class="circle_block flex_row font_size_12">
+                <div class="circle_step_block active">
+                    <div class="circle_step"></div>
+                    <div class="circle_step_text">Шаг 1</div>
+                </div>
+
+                <div class="horizontal_line h_l_c"></div>
+
+                <div class="circle_step_block">
+                    <div class="circle_step"></div>
+                    <div class="circle_step_text">Шаг 2</div>
+                </div>
+
+                <div class="horizontal_line h_l_c"></div>
+
+                <div class="circle_step_block">
+                    <div class="circle_step"></div>
+                    <div class="circle_step_text">Шаг 3</div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="main_top_text font_size_26">Вход | Регистрация</div>
+    </div>
+
+    <div class="step_block">
+        <div class="step active">
+            <div class="step_text font_size_14">
+                Для того, чтобы продолжить, введите свой
+                номер телефона, мы отправим SMS с кодом
+            </div>
+            <div class="step_phone_number">
+                <input placeholder="Номер телефона" type="text">
+            </div>
+            <div class="button font_size_14" onclick="nextStep(2)">Дальше</div>
+        </div>
+
+        <div class="step">
+            <div class="step_text font_size_14" style="margin-bottom: 2rem">
+                Для того, чтобы продолжить, введите свой
+                номер телефона, мы отправим SMS с кодом
+            </div>
+            <div class="font_size_14 input_label">Пункт формы</div>
+            <div class="step_phone_number">
+                <input placeholder="Поле ввода" type="text">
+            </div>
+
+            <div class="font_size_14 input_label">Пункт формы</div>
+            <div class="step_phone_number">
+                <input placeholder="Поле ввода" type="text">
+            </div>
+
+            <div class="font_size_14 input_label">Пункт формы</div>
+            <div class="step_phone_number">
+                <input placeholder="Поле ввода" type="text">
+            </div>
+            <div class="button font_size_14">Дальше</div>
+        </div>
+    </div>
+</main>
+
+<footer class="footer">
+    <p class="support font_size_14">Поддержка клиентов</p>
+    <div class="phone_block">
+        <div class="flex_row">
+            <img alt="" id="phone_image" src="res/image/phone.svg" style="width: 1rem; height: 1rem">
+            <p class="phone_number font_size_14">0 800 120 8888</p>
+        </div>
+        <p class="font_size_12" id="call_info">
+            Стоимость звонков
+            согласно тарифам
+            вашего оператора
+        </p>
+    </div>
+    <div class="flex_row clock_block">
+        <img alt="" src="res/image/clock.svg" style="width: 1rem; height: 1rem">
+        <div class="flex_row_for_date">
+            <div class="font_size_12" style="min-width: max-content">Пн-Пт: 8:00 - 22:00</div>
+            <div class="font_size_12" id="backslash" style="margin: 0 0.25rem">/</div>
+            <div class="font_size_12" style="min-width: max-content">Сб-Вс: 8:00 - 21:00</div>
+        </div>
+    </div>
+
+    <div class="vertical_line"></div>
+
+    <p class="we_are_in_network font_size_14">Мы в социальных сетях:</p>
+    <div class="social_network_block">
+        <div class="flex_row">
+            <div class="svg_block">
+                <img alt="" src="res/image/facebook.svg">
+            </div>
+            <div class="svg_block">
+                <img alt="" src="res/image/instagram.svg">
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="scripts/login/script.js"></script>
+</body>
+</html>

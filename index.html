@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <link href="https://rsms.me/" rel="preconnect">
+    <link href="https://rsms.me/inter/inter.css" rel="stylesheet">
+
+    <link href="style/common.css" rel="stylesheet"/>
+    <link href="style/index/header.css" rel="stylesheet"/>
+    <link href="style/index/main.css" rel="stylesheet"/>
+    <link href="style/index/footer.css" rel="stylesheet"/>
+    <link href="style/index/slider.css" rel="stylesheet"/>
+</head>
+<body style="justify-content: space-between">
+<header class="header">
+    <div class="header_question_block">
+        <img alt="" src="res/image/logo.png">
+        <div class="header_element_block"><a href="">Как получить?</a></div>
+        <div class="header_element_block"><a href="">Как продлить?</a></div>
+        <div class="header_element_block"><a href="">Как погасить?</a></div>
+    </div>
+
+    <div class="header_element_number_block"><a href="">0 800 120 8888</a></div>
+    <img alt="" class="menu_icon" src="res/image/menu.svg">
+</header>
+
+
+<main class="main">
+    <div class="main_top flex_row">
+        <div class="credit_text">
+            <div class="credit_by_card">
+                Кредит онлайн на карту
+            </div>
+            <div class="credit_info">
+                Кредит под 0% для новых пользователей
+            </div>
+        </div>
+        <img alt="" class="invite_image" src="res/image/invite.png">
+    </div>
+
+    <div class="panel_before">
+        <div class="tab flex_row">
+            <div class="tab_element tab_element_not_active" onclick="tabClick(this, 'short')"><span
+                    style="color: #54AEE2">NewShort</span>
+                <span class="gray_text_in_tab">до</span> 6 млн <span class="gray_text_in_tab">сум</span></div>
+            <div class="tab_element tab_element_active" onclick="tabClick(this, 'long')"><span style="color: #FF8F23">Long</span>
+                <span class="gray_text_in_tab">до</span> 25 млн <span class="gray_text_in_tab">сум</span></div>
+        </div>
+        <div class="credit_gift_block">Дарим подарки за оформление кредита!</div>
+    </div>
+
+    <div class="panel_block">
+        <div class="sliders_list">
+            <div class="slider_block">
+                <div class="slider_top flex_row" style="justify-content: space-between; align-items: center;">
+                    <div class="slider_prefix slider_start font_size_12"><span id="sliderSumMin">1 млн</span> сум</div>
+                    <div class="sum flex_row" style="align-items: center">
+                        <div class="slider_sum_button" onclick="stepSlider(this, 1, -1)">-</div>
+                        <div class="slider_sum_text font_size_14"><span id="sliderSum">4500000</span>сум</div>
+                        <div class="slider_sum_button" onclick="stepSlider(this, 1, 1)">+</div>
+                    </div>
+                    <div class="slider_prefix slider_end font_size_12"><span id="sliderSumMax">25 млн</span> сум</div>
+                </div>
+                <div class="slider_container">
+                    <input class="slider" id="mySlider1" itemid="1" max="25000000" min="1000000" step="100000"
+                           type="range" value="4500000">
+                </div>
+            </div>
+
+            <div class="slider_block" style="margin-top: 2rem">
+                <div class="slider_top flex_row" style="justify-content: space-between; align-items: center;">
+                    <div class="slider_prefix slider_start font_size_12"><span id="sliderWeekMin">8 недель</span></div>
+                    <div class="sum flex_row" style="align-items: center">
+                        <div class="slider_sum_button" onclick="stepSlider(this, 2, -1)">-</div>
+                        <div class="slider_sum_text font_size_14"><span id="sliderWeek">20</span><span id="weekType">недель</span>
+                        </div>
+                        <div class="slider_sum_button" onclick="stepSlider(this, 2, 1)">+</div>
+                    </div>
+                    <div class="slider_prefix slider_end font_size_12"><span id="sliderWeekMax">30 недель</span></div>
+                </div>
+                <div class="slider_container">
+                    <input class="slider" id="mySlider2" itemid="2" max="30" min="8" step="1" type="range" value="20">
+                </div>
+            </div>
+
+            <div class="button font_size_14">
+                Получить <span id="sliderSum2">4500000</span> сум
+            </div>
+        </div>
+
+        <div class="vertical_line"></div>
+        <div class="results font_size_14">
+            <div class="flex_row">
+                <div style="color: #A4ABBB;">Вы берете</div>
+                <div style="margin-left: auto"><span class="resSum">4500000</span> сум</div>
+            </div>
+            <div class="flex_row">
+                <div style="color: #A4ABBB;">Проценты</div>
+                <div class="flex_row" style="margin-left: auto; align-items: center;">
+                    <del class="font_size_12">2 250 000 сум</del>
+                    <div>0 сум</div>
+                </div>
+            </div>
+            <div class="flex_row">
+                <div style="color: #A4ABBB;">К погашению до 25.08.23</div>
+                <div class="flex_row" style="margin-left: auto; align-items: center;">
+                    <del class="font_size_12">4 750 000 сум</del>
+                    <div><span class="resSum">4500000</span> сум</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <img alt="" class="invite_image_after" src="res/image/invite.png">
+</main>
+
+
+<footer class="footer">
+    <p class="support font_size_14">Поддержка клиентов</p>
+    <div class="phone_block">
+        <div class="flex_row">
+            <img alt="" id="phone_image" src="res/image/phone.svg" style="width: 1rem; height: 1rem">
+            <p class="phone_number font_size_14">0 800 120 8888</p>
+        </div>
+        <p class="font_size_12" id="call_info">
+            Стоимость звонков
+            согласно тарифам
+            вашего оператора
+        </p>
+    </div>
+    <div class="flex_row clock_block">
+        <img alt="" src="res/image/clock.svg" style="width: 1rem; height: 1rem">
+        <div class="flex_row_for_date">
+            <div class="font_size_12" style="min-width: max-content">Пн-Пт: 8:00 - 22:00</div>
+            <div class="font_size_12" id="backslash" style="margin: 0 0.25rem">/</div>
+            <div class="font_size_12" style="min-width: max-content">Сб-Вс: 8:00 - 21:00</div>
+        </div>
+    </div>
+
+    <div class="vertical_line"></div>
+
+    <p class="we_are_in_network font_size_14">Мы в социальных сетях:</p>
+    <div class="social_network_block">
+        <div class="flex_row">
+            <div class="svg_block">
+                <img alt="" src="res/image/facebook.svg">
+            </div>
+            <div class="svg_block">
+                <img alt="" src="res/image/instagram.svg">
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="scripts/index/config.js"></script>
+<script src="scripts/index/script.js"></script>
+</body>
+</html>
