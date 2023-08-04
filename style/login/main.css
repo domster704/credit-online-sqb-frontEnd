@@ -48,7 +48,11 @@ main {
 }
 
 .step_phone_number {
-    margin-top: 1vw;
+    margin: 1vw 0;
+}
+
+.step-input {
+    margin: max(3rem, 3.87vw) 0;
 }
 
 .step_phone_number > input {
@@ -64,7 +68,7 @@ main {
 }
 
 .circle_step {
-    width: clamp(32px, 2.5vw, 46px);
+    width: max(2.00181rem, 2.875vw);
     aspect-ratio: 1 / 1;
     background-color: #B8E0F7;
     border-radius: 50%;
@@ -72,14 +76,13 @@ main {
 }
 
 .circle_step_block.active > .circle_step {
-    width: clamp(32px, 20vw, 100px);
+    width: max(3.35081rem + 0.39rem, 4.8125vw + 0.56vw);
     aspect-ratio: 1 / 1;
 
-    padding: 0.3rem;
-    border: 1px solid transparent;
-    box-shadow: 0 0 0 3px #FF7F11;
+    border: max(0.39rem - 0.13rem, 0.56vw - 0.19vw) solid transparent;
+    box-shadow: 0 0 0 max(0.13rem, 0.19vw) #FF7F11;
     background: #FDFFFF url("../../res/image/reg.svg") no-repeat center center;
-    background-size: 1.75rem;
+    background-size: max(1.3055rem, 1.875vw) max(1.82775rem, 2.625vw);
     background-clip: content-box;
 }
 

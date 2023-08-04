@@ -29,26 +29,43 @@
     background-repeat: no-repeat;
 }
 
-#mySlider1::-webkit-slider-thumb {
+.mySlider1::-webkit-slider-thumb {
     background-image: url('../../res/image/sum.svg');
 }
 
-#mySlider2::-webkit-slider-thumb {
+.mySlider2::-webkit-slider-thumb {
     background-image: url('../../res/image/calendar.svg');
 }
 
 .slider_sum_button {
     display: flex;
-    justify-content: center;
+    text-align: center;
     align-items: center;
+    align-content: center;
+    justify-content: center;
 
-    width: clamp(10px, 100vw, 18px);
-    height: clamp(10px, 100vw, 18px);
+    width: clamp(1rem, 1.25vw, 1.5rem);
+    height: clamp(1rem, 1.25vw, 1.5rem);
     border-radius: 50%;
     border: 2px var(--slider-button-color) solid;
     color: var(--slider-button-color);
     user-select: none;
+    font-size: max(0.6rem, 1vw);
 }
+
+/*.slider_sum_button-minus {*/
+/*    background: url("../../res/image/blue_minus.svg") no-repeat center center;*/
+/*    background-size: contain;*/
+/*    width: 1.0625rem;*/
+/*    height: 1.0625rem;*/
+/*}*/
+
+/*.slider_sum_button-plus {*/
+/*    background: url("../../res/image/blue_minus.svg") no-repeat center center;*/
+/*    background-size: contain;*/
+/*    width: 1.0625rem;*/
+/*    height: 1.0625rem;*/
+/*}*/
 
 .slider_sum_button:hover {
     cursor: pointer;
@@ -56,13 +73,18 @@
 
 .slider_sum_text {
     margin: 0 1rem;
-    width: clamp(80px, 10vw, 300px);
+    width: clamp(80px, 15vw, 300px);
     display: flex;
     justify-content: center;
+    font-size: clamp(0.85rem, 2vw, 1rem);
+    font-weight: 500;
 }
 
 .slider_prefix {
     min-width: clamp(65px, 5vw, 150px);
+    font-size: max(0.6rem, 1vw);
+    font-weight: 500;
+    color: #A4ABBB;
 }
 
 .slider_end {

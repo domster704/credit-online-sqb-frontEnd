@@ -6,20 +6,27 @@ const creditGiftBlock = document.querySelector(".credit_gift_block");
 
 const panelBlock = document.querySelector(".panel_block");
 
-const sliderSum = document.getElementById("sliderSum");
-const sliderSumButton = document.getElementById("sliderSum2");
-const sliderWeek = document.getElementById("sliderWeek");
+const sliderSum = {
+    'short': document.getElementsByClassName("sliderSum")[0],
+    'long': document.getElementsByClassName("sliderSum")[1],
+};
+const sliderSumButton = {
+    'short': document.getElementsByClassName("sliderSumButton")[0],
+    'long': document.getElementsByClassName("sliderSumButton")[1],
+};
+const sliderWeek = {
+    'short': document.getElementsByClassName("sliderWeek")[0],
+    'long': document.getElementsByClassName("sliderWeek")[1],
+};
 
-const sliderSumMin = document.getElementById("sliderSumMin");
-const sliderSumMax = document.getElementById("sliderSumMax");
-const sliderWeekMin = document.getElementById("sliderWeekMin");
-const sliderWeekMax = document.getElementById("sliderWeekMax");
-
-const weekType = document.getElementById("weekType");
+const resSumSale = document.getElementById("resSumSale");
+const resSumSaleFinal = document.getElementById("resSumSalePlusAllSum");
+const resDate = document.getElementById("resDate");
 
 function equateWidth() {
     imageInvite.onload = () => {
         if (imageInvite.clientWidth !== 0) {
+            console.log(imageInvite.clientWidth, 'b')
             creditGiftBlock.style.width = imageInvite.clientWidth + 'px';
         }
     };
@@ -35,6 +42,10 @@ let thumb_color = SLIDER_THUMB_COLOR_LONG;
 let sliderListColor = ['#f0933a', '#FDFFFF'];
 let sliderButtonColor = SLIDER_BUTTON_COLOR_LONG;
 
+
+let slidersListShort = document.querySelector('.sliders_list_short');
+let slidersListLong = document.querySelector('.sliders_list_long');
+
 function tabClick(tab, tabInfo) {
     for (let i of tabList) {
         if (i.classList.contains("tab_element_active")) {
@@ -45,41 +56,25 @@ function tabClick(tab, tabInfo) {
 
     tab.classList.remove("tab_element_not_active");
     tab.classList.add("tab_element_active");
-    state = tabInfo;
-
-    switch (state) {
-        case 'long':
-            thumb_color = SLIDER_THUMB_COLOR_LONG;
-            sliderListColor = ['#f0933a', '#FDFFFF'];
-
-            sliderButtonColor = SLIDER_BUTTON_COLOR_LONG;
-            break;
+    switch (tabInfo) {
         case 'short':
+            slidersListShort.style.display = 'block';
+            slidersListLong.style.display = 'none';
+
             thumb_color = SLIDER_THUMB_COLOR_SHORT;
             sliderListColor = ['#46AFEB', '#FDFFFF'];
-
             sliderButtonColor = SLIDER_BUTTON_COLOR_SHORT;
             break;
+        case 'long':
+            slidersListShort.style.display = 'none';
+            slidersListLong.style.display = 'block';
+            thumb_color = SLIDER_THUMB_COLOR_LONG;
+
+            sliderListColor = ['#f0933a', '#FDFFFF'];
+            sliderButtonColor = SLIDER_BUTTON_COLOR_LONG;
+            break;
     }
-
-    let dict = MIN_MAX[tabInfo];
-    sliderSumMin.innerText = dict['sumMinMaxText'][0];
-    sliderSumMax.innerText = dict['sumMinMaxText'][1];
-
-    sliderWeekMin.innerText = dict['weekMinMaxText'][0];
-    sliderWeekMax.innerText = dict['weekMinMaxText'][1];
-
-    let slider1 = document.getElementById('mySlider1');
-    slider1.min = dict['sumMinMaxValue'][0];
-    slider1.max = dict['sumMinMaxValue'][1];
-    slider1.value = dict['sumValue'];
-
-    let slider2 = document.getElementById('mySlider2');
-    slider2.min = dict['weekMinMaxValue'][0];
-    slider2.max = dict['weekMinMaxValue'][1];
-    slider2.value = dict['weekValue'];
-
-    weekType.innerText = dict['weekType'];
+    state = tabInfo;
 
     for (let i of document.getElementsByClassName('slider_sum_button')) {
         i.style.setProperty('--slider-button-color', sliderButtonColor);
@@ -126,14 +121,21 @@ function changeSliderData(slider, type) {
     function changeText() {
         switch (type.value) {
             case "1":
-                sliderSum.innerText = slider.value + "\u00A0";
-                sliderSumButton.innerText = sliderSum.innerText;
+                sliderSum[state].innerText = slider.value;
+                sliderSumButton[state].innerText = sliderSum[state].innerText;
+
+                resSumSale.innerText = ((state === 'long' ? 0.5 : 0.1) * slider.value).toString();
+                resSumSaleFinal.innerText = (parseInt(resSumSale.innerText) + parseInt(slider.value)).toString()
                 for (let i of document.getElementsByClassName("resSum")) {
-                    i.innerText = slider.value + "\u00A0";
+                    i.innerText = slider.value;
                 }
                 break;
             case "2":
-                sliderWeek.innerText = slider.value + "\u00A0";
+                sliderWeek[state].innerText = slider.value;
+
+                let today = new Date();
+                today.setDate(today.getDate() + slider.value * (state === 'short' ? 1 : 7));
+                resDate.innerText = today.toLocaleDateString();
                 break;
         }
     }
@@ -143,15 +145,20 @@ function changeSliderData(slider, type) {
 }
 
 function updateSliders() {
-    for (let i of document.getElementsByClassName("slider")) {
-        changeSliderData(i, i.attributes['2']);
+    for (let i of document.getElementsByClassName(`slider_${state}`)) {
+        changeSliderData(i, i.attributes['1']);
     }
 }
 
 function stepSlider(button, type, action) {
-    let slider = document.getElementById(`mySlider${type}`);
+    let slider = document.getElementsByClassName(`mySlider${type}`)[state === 'short' ? 0 : 1];
     slider.value = (parseInt(slider.value) + action * slider.step).toString();
     updateSliders();
+}
+
+const menuList = document.querySelector(".hamburger-menu-list")
+function toggleMenu(checkBox) {
+    menuList.classList.toggle('active');
 }
 
 window.onresize = () => {
@@ -164,6 +171,7 @@ window.onresize = () => {
     }
 
     updateSliders();
+    equateWidth();
 }
 
 if (window.innerWidth <= 980)
@@ -171,10 +179,11 @@ if (window.innerWidth <= 980)
 
 for (let i of document.getElementsByClassName("slider")) {
     i.addEventListener("input", event => {
-        changeSliderData(i, i.attributes['2'])
+        changeSliderData(i, i.attributes['1'])
     });
-    changeSliderData(i, i.attributes['2']);
+    changeSliderData(i, i.attributes['1']);
 }
+
 equateWidth();
 tabClick(document.querySelector('.tab_element_active'), 'long');
 

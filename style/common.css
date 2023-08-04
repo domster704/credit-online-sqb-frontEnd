@@ -50,6 +50,11 @@ body {
     font-weight: bold;
     margin: 2vw auto 0;
     user-select: none;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: max(0.25rem, 0.3vw);
 }
 
 .vertical_line {

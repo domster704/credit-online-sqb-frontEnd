@@ -1,9 +1,12 @@
+.footer-with-image {
+    margin-top: 6rem;
+}
+
 .footer {
     background: #FDFFFF;
     border: solid #E2F2F9 1px;
     border-radius: 8px;
 
-    margin-top: 6rem;
     margin-bottom: 1.5rem;
     filter: drop-shadow(0 4px 20px rgba(66, 167, 225, 0.25));
 
@@ -23,17 +26,12 @@
     grid-area: C;
 }
 
-/*.call_block {*/
-/*    font-size: 0.875rem;*/
-/*    margin-right: 10rem;*/
-/*}*/
-
 .call_block > div > img {
     margin-right: 0.5rem
 }
 
 #call_info {
-    max-width: 7.5rem;
+    max-width: max(7.5rem, 10vw);
     color: #A4ABBB;
     margin-left: 2rem;
     margin-top: 0.25rem;
@@ -47,8 +45,8 @@
 }
 
 .svg_block {
-    width: 2rem;
-    height: 2rem;
+    width: max(1.71313rem, 2.375vw);
+    aspect-ratio: 1.71313 / 1.66806;
     background-color: #DAF0FC;
     border: 1px #A0DEFF solid;
     border-radius: 50%;
@@ -111,5 +109,11 @@
 
     .clock_block {
         margin-top: 1rem;
+    }
+}
+
+@media (max-width: 980px) {
+    .footer {
+        border-radius: 0 0 8px 8px;
     }
 }
