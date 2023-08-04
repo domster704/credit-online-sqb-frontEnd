@@ -77,7 +77,7 @@
 }
 
 .results > .flex_row {
-    width: max(27rem, 25vw);
+    width: max(30rem, 25vw);
 }
 
 .results > .flex_row > div:nth-child(2) {
