@@ -36,6 +36,11 @@ main {
     display: none;
 }
 
+.step > a {
+    text-decoration: none;
+    text-decoration-color: transparent;
+}
+
 .step.active {
     display: block;
 }
